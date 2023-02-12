@@ -24,6 +24,6 @@ wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Meslo.zip
 sudo unzip Meslo.zip -d /home/$username/.fonts/
 chown $username:$username /home/$username/.fonts/*
 cd /usr/share/themes/ || exit
-git clone https://github.com/EliverLara/Nordic.git
+sudo git clone https://github.com/EliverLara/Nordic.git
 sudo systemctl enable sddm
 sudo reboot
