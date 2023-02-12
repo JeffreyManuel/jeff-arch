@@ -23,5 +23,5 @@ sudo unzip FiraCode.zip -d /home/$username/.fonts/
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Meslo.zip
 sudo unzip Meslo.zip -d /home/$username/.fonts/
 chown $username:$username /home/$username/.fonts/*
-
-
+sudo systemctl enable sddm
+sudo reboot
