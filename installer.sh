@@ -13,7 +13,7 @@ cd ubuntu-titus
 cp -r ./dotconfig/* ~/.config
 cp -r dotfonts/* ~/.fonts/
 fc-cache -vf
-yay -S noto-fonts-emoji ttf-font-awesome jq polybar redshift sddm nano vim rofi sxhkd neofetch flameshot psmisc vim lxappearance papirus-icon-theme lxappearance noto-fonts-emoji sddm feh bspwm sxhkd kitty rofi polybar picom thunar nitrogen lxpolkit  xorg unzip yad wget pulseaudio pavucontrol qt5-quickcontrols qt5-quickcontrols2 qt5-svg ttf-font-awesome-5 ttf-font-awesome firefox
+yay -S noto-fonts-emoji ttf-font-awesome jq polybar redshift sddm nano vim rofi sxhkd neofetch flameshot psmisc vim lxappearance papirus-icon-theme lxappearance noto-fonts-emoji sddm feh bspwm sxhkd kitty rofi polybar picom thunar nitrogen  xorg unzip yad wget pulseaudio pavucontrol qt5-quickcontrols qt5-quickcontrols2 qt5-svg ttf-font-awesome-5 lxpolkit-git ttf-font-awesome firefox
 git clone https://github.com/alvatip/Nordzy-cursors
 cd Nordzy-cursors
 bash install.sh
