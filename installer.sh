@@ -1,5 +1,5 @@
 #! /bin/sh
-sudo pacman -Syu
+sudo pacman -Syu base-devel
 git clone https://aur.archlinux.org/yay-git.git
 cd yay-git
 makepkg -si
