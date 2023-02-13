@@ -1,6 +1,13 @@
 #! /bin/sh
 #Installing Basic Packages
-sudo pacman -Syu base-devel
+sudo pacman -Syu --needed base-devel rsync reflector
+#Enable parellel Downloads
+sudo sed -i 's/^#ParallelDownloads/ParallelDownloads/' /etc/pacman.conf
+#Setting Mirrors for fast downloads 
+"
+reflector -a 48 -c $iso -f 5 -l 20 --sort rate --save /etc/pacman.d/mirrorlist
+echo -ne "
+
 
 #Installing yay aur helper
 
@@ -34,6 +41,6 @@ sudo unzip Meslo.zip -d /home/$username/.fonts/
 chown $username:$username /home/$username/.fonts/*
 cd /usr/share/themes/ || exit
 sudo git clone https://github.com/EliverLara/Nordic.git
-sudo systemctl enable sddm
+sudo sysemctl enable sddm
 fc-cache -vf
 sudo reboot
