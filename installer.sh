@@ -1,6 +1,6 @@
 #! /bin/sh
 #Installing Basic Packages
-sudo pacman -Syu --needed base-devel rsync reflector
+sudo pacman -Syu --needed --noconfirm base-devel rsync reflector
 #Enable parellel Downloads
 sudo sed -i 's/^#ParallelDownloads/ParallelDownloads/' /etc/pacman.conf
 #Setting Mirrors for fast downloads 
@@ -22,7 +22,7 @@ mkdir ~/.fonts
 
 #Installing the dependencies and the window manager bspwm
 
-yay -S noto-fonts-emoji variety feh ttf-font-awesome jq polybar redshift sddm nano vim sxhkd neofetch psmisc lxappearance papirus-icon-theme noto-fonts-emoji bspwm kitty  polybar picom thunar nitrogen  xorg unzip yad wget pulseaudio pavucontrol qt5-quickcontrols qt5-quickcontrols2 qt5-svg rofi font-awesome-5 lxpolkit-git ttf-font-awesome brave-bin 
+yay -S noto-fonts-emoji variety feh ttf-font-awesome jq polybar redshift sddm nano vim sxhkd neofetch psmisc lxappearance papirus-icon-theme noto-fonts-emoji bspwm kitty  polybar picom thunar nitrogen  xorg unzip yad wget pulseaudio pavucontrol qt5-quickcontrols qt5-quickcontrols2 qt5-svg rofi font-awesome-5 lxpolkit-git ttf-font-awesome brave-bin  --noconfirm
 
 #Themeing
 cd ~/jeff-arch
