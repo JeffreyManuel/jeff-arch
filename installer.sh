@@ -22,7 +22,7 @@ mkdir ~/.fonts
 
 #Installing the dependencies and the window manager bspwm
 
-yay -S noto-fonts-emoji variety feh ttf-font-awesome jq polybar redshift sddm nano vim sxhkd neofetch psmisc vim lxappearance papirus-icon-theme noto-fonts-emoji bspwm kitty  polybar picom thunar nitrogen  xorg unzip yad wget pulseaudio pavucontrol qt5-quickcontrols qt5-quickcontrols2 qt5-rofisvg ttf-font-awesome-5 lxpolkit-git ttf-font-awesome firefox
+yay -S noto-fonts-emoji variety feh ttf-font-awesome jq polybar redshift sddm nano vim sxhkd neofetch psmisc lxappearance papirus-icon-theme noto-fonts-emoji bspwm kitty  polybar picom thunar nitrogen  xorg unzip yad wget pulseaudio pavucontrol qt5-quickcontrols qt5-quickcontrols2 qt5-svg rofi ttf-font-awesome-5 lxpolkit-git ttf-font-awesome firefox
 
 #Themeing
 cp -r bg.jpg ~/Pictures/bg.jpg
