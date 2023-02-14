@@ -1,12 +1,15 @@
 #! /bin/sh
 #Installing Basic Packages
-sudo pacman -Syu --needed --noconfirm base-devel rsync reflector
+sudo pacman -Syu --needed --noconfirm archlinux-keyring pacman-contrib terminus-font base-devel rsync reflector
+setfont ter-v22b
+iso=$(curl -4 ifconfig.co/country-iso)
+timedatectl set-ntp true
 #Enable parellel Downloads
 sudo sed -i 's/^#ParallelDownloads/ParallelDownloads/' /etc/pacman.conf
 #Setting Mirrors for fast downloads 
 "
 reflector -a 48 -c $iso -f 5 -l 20 --sort rate --save /etc/pacman.d/mirrorlist
-echo -ne "
+"
 
 
 #Installing yay aur helper
