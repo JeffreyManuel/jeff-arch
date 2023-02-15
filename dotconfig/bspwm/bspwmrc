@@ -68,7 +68,6 @@ bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 bspc rule -a Discord desktop='^6'
-bspc rule -a synergy desktop='^9'
 
 #Auto-Start
 bspc desktop -f ^9
@@ -77,7 +76,5 @@ sleep 0.50
 urxvtc &
 lxpolkit &
 picom --config "$HOME/.config/bspwm/picom.conf" &
-flameshot &
-synology-drive &
 bspc desktop -f ^1
 
