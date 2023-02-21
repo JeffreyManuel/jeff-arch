@@ -30,8 +30,8 @@ yay -S nerd-fonts-complete-starship noto-fonts-emoji netctl brave variety feh tt
 #Themeing
 cd ~/jeff-arch
 cp -r bg.jpg ~/Pictures/bg.jpg
-cp -r dotfonts/* ~/.fonts 
-cp -r dotconfig/* ~/.config
+cp -r dotfonts/* ~/.fonts/
+cp -r dotconfig/* ~/.config/
 
 git clone https://github.com/alvatip/Nordzy-cursors
 cd Nordzy-cursors
