@@ -1,50 +1,49 @@
 #! /bin/sh
-
 set -e
-
 # Installing Basic Packages
 sudo pacman -Syu --needed --noconfirm archlinux-keyring pacman-contrib terminus-font base-devel rsync reflector
-setfont ter-v22b
+sudo setfont ter-v22b
 iso=$(curl -4 ifconfig.co/country-iso)
 sudo timedatectl set-ntp true
-
-# Enable parallel Downloads
-sed -i "s/^#ParallelDownloads/ParallelDownloads/" /etc/pacman.conf
-
+# Enable parellel Downloads
+sudo sed -i 's/^#ParallelDownloads/ParallelDownloads/' /etc/pacman.conf
 # Setting Mirrors for fast downloads 
-reflector -a 48 -c "$iso" -f 5 -l 20 --sort rate --save /etc/pacman.d/mirrorlist
+sudo reflector -a 48 -c $iso -f 5 -l 20 --sort rate --save /etc/pacman.d/mirrorlist
 
 # Installing yay aur helper
 git clone https://aur.archlinux.org/yay-git.git
 cd yay-git
 makepkg -si
+cd ..
 
 # Creating a few directories
-mkdir "$HOME"/Pictures
-mkdir "$HOME"/.config
-mkdir "$HOME"/.fonts
+sudo mkdir /home/$USER/Pictures
+sudo mkdir /home/$USER/.config
+sudo mkdir /home/$USER/.fonts
 
 # Installing the dependencies and the window manager bspwm
-yay -S nerd-fonts-complete-starship noto-fonts-emoji netctl brave variety feh ttf-font-awesome jq polybar redshift sddm nano vim sxhkd neofetch psmisc lxappearance papirus-icon-theme noto-fonts-emoji bspwm kitty polybar picom thunar nitrogen xorg unzip yad wget pulseaudio pavucontrol qt5-quickcontrols qt5-quickcontrols2 qt5-svg rofi lxpolkit-git ttf-font-awesome brave-git --noconfirm
+sudo yay -S nerd-fonts-complete-starship noto-fonts-emoji netctl brave variety feh ttf-font-awesome jq polybar redshift sddm nano vim sxhkd neofetch psmisc lxappearance papirus-icon-theme noto-fonts-emoji bspwm kitty polybar picom thunar nitrogen xorg unzip yad wget pulseaudio pavucontrol qt5-quickcontrols qt5-quickcontrols2 qt5-svg rofi lxpolkit-git ttf-font-awesome brave-git --noconfirm
 
 # Theming
-cd ~/jeff-arch
-cp bg.jpg "$HOME"/Pictures/bg.jpg
-cp -r dotfonts/* "$HOME"/.fonts/
-cp -r dotconfig/* "$HOME"/.config/
+cd ~/jeff-arch || exit
+sudo cp -r bg.jpg /home/$USER/Pictures/bg.jpg
+sudo cp -r dotfonts/* /home/$USER/.fonts/
+sudo cp -r dotconfig/* /home/$USER/.config/
 
 git clone https://github.com/alvatip/Nordzy-cursors
-cd Nordzy-cursors
-bash install.sh
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraCode.zip
-mv dotfonts/fontawesome/*.otf "$HOME"/.fonts/
-unzip FiraCode.zip -d "$HOME"/.fonts/
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Meslo.zip
-unzip Meslo.zip -d "$HOME"/.fonts/
-chown "$USER":"$USER" "$HOME"/.fonts/*
-cd /usr/share/themes/ && sudo git clone https://github.com/EliverLara/Nordic.git
+cd Nordzy-cursors 
+sudo bash install.sh
+sudo wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraCode.zip
+sudo mv dotfonts/fontawesome/*.otf /home/$USER/.fonts/
+sudo unzip FiraCode.zip -d /home/$USER/.fonts/
+sudo wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Meslo.zip
+sudo unzip Meslo.zip -d /home/$USER/.fonts/
+sudo chown $USER:$USER /home/$USER/.fonts/*
+cd /usr/share/themes/ 
+sudo git clone https://github.com/EliverLara/Nordic.git
 sudo systemctl enable sddm
-fc-cache -vf
+sudo fc-cache -vf
+
 #Reboot
-sleep 10
-reboot
+sudo sleep 10
+sudo reboot
