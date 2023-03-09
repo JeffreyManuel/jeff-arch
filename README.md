@@ -11,9 +11,10 @@ From initial Prompt type the following commands:
 
 ```
 pacman -Sy git
-git clone https://github.com/ChrisTitusTech/ArchTitus
-cd ArchTitus
-./archtitus.sh
+git clone https://github.com/JeffreyManuel/jeff-arch
+cd jeff-arch
+chmod +x ./preinstall.sh
+./preinstall.sh
 ```
 
 ### Connecting to wifi
