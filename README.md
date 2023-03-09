@@ -34,6 +34,8 @@ After unblocking the WiFi, you can connect to it. Go through these 5 steps:
 
 #5: Find your network, and run `station [device name] connect [network name]`, enter your password and run `exit`. You can test if you have internet connection by running `ping -c 3 google.com` 
 ### Connecting to wifi In the post
+Launch the terminal
+And type
 ```
  nmcli device wifi connect <AP name> password <password>
  `````
