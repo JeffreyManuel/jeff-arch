@@ -44,6 +44,6 @@ sudo git clone https://github.com/EliverLara/Nordic.git
 sudo systemctl enable sddm
 sudo fc-cache -vf
 
-#Reboot
+#Reboot The System
 sudo sleep 10
 sudo reboot
