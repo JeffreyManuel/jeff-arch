@@ -37,7 +37,7 @@ mkdir -p /mnt/boot/efi
 mount "${DRIVE}1" /mnt/boot/efi
 
 # Install essential packages
-pacstrap /mnt base linux linux-firmware networkmanager git neofetch nano vim 
+pacstrap /mnt base base-devel linux linux-firmware networkmanager git neofetch nano vim 
 
 # Generate fstab
 genfstab -U /mnt >> /mnt/etc/fstab
