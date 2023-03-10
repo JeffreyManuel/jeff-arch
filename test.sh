@@ -22,6 +22,8 @@ fi
 timedatectl set-ntp true
 
 #Enable Faster Downloading 
+echo "Error: Enable Faster Downloading  " 
+ 
 iso=$(curl -4 ifconfig.co/country-iso)
 reflector -a 48 -c $iso -f 5 -l 20 --sort rate --save /etc/pacman.d/mirrorlist
 sed -i 's/^#ParallelDownloads/ParallelDownloads/' /etc/pacman.conf
