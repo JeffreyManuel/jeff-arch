@@ -101,6 +101,6 @@ echo "options root=${DRIVE}2 rw" >> /boot/loader/entries/arch.conf
 
 EOF
 
-# Exit the chroot environment and reboot
+# Exit the chroot environment
 umount -R /mnt
-reboot
+
