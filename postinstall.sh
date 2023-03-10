@@ -4,7 +4,7 @@ set -e
 sudo pacman -Syu --needed --noconfirm archlinux-keyring pacman-contrib terminus-font base-devel rsync reflector
 sudo setfont ter-v22b
 iso=$(curl -4 ifconfig.co/country-iso)
-sudo timedatectl set-ntp true
+
 # Enable parellel Downloads
 sudo sed -i 's/^#ParallelDownloads/ParallelDownloads/' /etc/pacman.conf
 # Setting Mirrors for fast downloads 
