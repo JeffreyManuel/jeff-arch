@@ -79,9 +79,11 @@ echo "$USERNAME:$USERPASS" | chpasswd
 sed -i '/^# %wheel ALL=(ALL) ALL/s/^# //' /etc/sudoers
 
 #Installing the gui 
+cd /home/$USERNAME/
 git clone https://github.com/JeffreyManuel/jeff-arch
+chown $USERNAME:$USERNAME ./jeff-arch
 cd jeff-arch
-./postinstall.sh
+su - $USERNAME -c /home/$USERNAME/jeff-arch/postinstall.sh
 
 
 # Install bootloader (systemd-boot)
